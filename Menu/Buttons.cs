@@ -658,6 +658,7 @@ namespace iiMenu.Menu
                 new ButtonInfo { buttonText = "Ender Pearl <color=grey>[</color><color=green>G</color><color=grey>]</color>", method = Movement.EnderPearl, disableMethod = Movement.DestroyEnderPearl, toolTip = "Gives you a throwable ender pearl when holding <color=green>grip</color>."},
                 new ButtonInfo { buttonText = "C4 <color=grey>[</color><color=green>G</color><color=grey>]</color>", aliases = new[] { "Bomb" }, method = Movement.Bomb, disableMethod = Movement.DisableBomb, toolTip = "Place a C4 with <color=green>grip</color> and detonate it with <color=green>A</color>."},
 
+                new ButtonInfo { buttonText = "Thruster Fly <color=grey>[</color><color=green>T</color><color=grey>]</color>", method = Movement.ThrusterFly, isTogglable = true, toolTip = "Fly by pointing your controllers and holding <color=green>triggers</color>. Dual thruster action! My personal fav." },
                 new ButtonInfo { buttonText = "Punch Mod", method = Movement.PunchMod, toolTip = "Lets people punch you across the map."},
                 new ButtonInfo { buttonText = "Telekinesis", method = Movement.Telekinesis, toolTip = "Lets people control you with nothing but the power of their finger."},
                 new ButtonInfo { buttonText = "Safety Bubble", method = Movement.SafetyBubble, toolTip = "Moves you away from players if they get too close to you."},
