@@ -363,7 +363,34 @@ namespace iiMenu.Mods
                 PhotonNetwork.RaiseEvent(69, new object[] { platform.transform.position, platform.transform.rotation }, new RaiseEventOptions { Receivers = ReceiverGroup.Others }, SendOptions.SendReliable);
             }
         }
+public static void ThrusterFly()
+        {
+            // Check Left Trigger
+            if (leftTrigger > 0.5f)
+            {
+                // Get the direction the left controller is pointing
+                Vector3 leftDir = GorillaTagger.Instance.leftHandTransform.forward;
+                
+                // Apply movement in that direction
+                GTPlayer.Instance.transform.position += leftDir * (Time.deltaTime * FlySpeed);
+                
+                // Optional: Kill velocity to make it feel "tight" and controlled
+                GorillaTagger.Instance.rigidbody.linearVelocity = Vector3.zero;
+            }
 
+            // Check Right Trigger
+            if (rightTrigger > 0.5f)
+            {
+                // Get the direction the right controller is pointing
+                Vector3 rightDir = GorillaTagger.Instance.rightHandTransform.forward;
+                
+                // Apply movement in that direction
+                GTPlayer.Instance.transform.position += rightDir * (Time.deltaTime * FlySpeed);
+                
+                // Optional: Kill velocity to make it feel "tight" and controlled
+                GorillaTagger.Instance.rigidbody.linearVelocity = Vector3.zero;
+            }
+        }
         public static void PlatformGun()
         {
             if (GetGunInput(false))
